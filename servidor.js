@@ -50,6 +50,7 @@ app.get('/treinos', (req , res) => {
 // GET /treinos/:id - busca um treino pelo id (404 se nao existir)
 // ------------------------------------------------------------
 
+// [PROF] Espaco em '/: id '. O certo eh /treinos/:id, tudo junto. Esse erro se repete no PUT e no DELETE.
 app.get('/treinos/: id ', (req , res) => {
     const id = Number(req.params.id);
     const treino = treinos.find((t) => t.id === id);
@@ -82,6 +83,7 @@ app.post('/treinos' , (req , res) => {
 // PUT /treinos/:id - substitui um treino
 // ------------------------------------------------------------
 
+// [PROF] Mesmo espaco no :id.
 app.put('/treinos/: id ', (req , res) => {
         const id = Number(req.params.id);
         const treino = treinos.find((t) => t.id === id);
@@ -101,6 +103,7 @@ app.put('/treinos/: id ', (req , res) => {
 // DELETE /treinos/:id - remove um treino
 // ------------------------------------------------------------
 
+// [PROF] Mesmo espaco no :id.
 app.delete('/treinos/: id ', (req , res) => {
     const id = Number(req.params.id);
     const posicao = treinos.findIndex((t) => t.id === id);
